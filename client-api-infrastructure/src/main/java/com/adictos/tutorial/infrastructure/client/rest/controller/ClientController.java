@@ -1,6 +1,6 @@
 package com.adictos.tutorial.infrastructure.client.rest.controller;
 
-import com.adictos.tutorial.application.client.port.ClientInteractionPort;
+import com.adictos.tutorial.domain.client.port.ClientInboundPort;
 import com.adictos.tutorial.infrastructure.client.rest.dto.ClientCreateReq;
 import com.adictos.tutorial.infrastructure.client.rest.dto.ClientRes;
 import org.springframework.http.HttpStatus;
@@ -12,9 +12,9 @@ import java.util.List;
 @RestController
 @RequestMapping("clients")
 public class ClientController {
-    private final ClientInteractionPort port;
+    private final ClientInboundPort port;
 
-    public ClientController(ClientInteractionPort port) {
+    public ClientController(ClientInboundPort port) {
         this.port = port;
     }
 

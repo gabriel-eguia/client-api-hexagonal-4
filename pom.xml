@@ -8,7 +8,9 @@
 		<module>client-api-domain</module>
 		<module>client-api-application</module>
 		<module>client-api-infrastructure</module>
-	</modules>
+        <module>client-api-inbound</module>
+        <module>client-api-outbound</module>
+    </modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

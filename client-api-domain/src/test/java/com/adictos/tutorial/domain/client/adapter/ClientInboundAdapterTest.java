@@ -1,6 +1,6 @@
-package com.adictos.tutorial.application.client.adapter;
+package com.adictos.tutorial.domain.client.adapter;
 
-import com.adictos.tutorial.application.client.port.ClientPort;
+import com.adictos.tutorial.domain.client.port.ClientOutboundPort;
 import com.adictos.tutorial.domain.client.model.Client;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -9,10 +9,10 @@ import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-class ClientInteractionAdapterTest {
+class ClientInboundAdapterTest {
 
-    private final ClientPort clientPort = mock(ClientPort.class);
-    private final ClientInteractionAdapter sut = new ClientInteractionAdapter(clientPort);
+    private final ClientOutboundPort clientPort = mock(ClientOutboundPort.class);
+    private final ClientInboundAdapter sut = new ClientInboundAdapter(clientPort);
 
     @Test
     void create_whenInvoke_thenCallCreateFromCreatePort() {

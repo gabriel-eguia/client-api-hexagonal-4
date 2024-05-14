@@ -1,6 +1,6 @@
 package com.adictos.tutorial.infrastructure.client.persistence.adapter;
 
-import com.adictos.tutorial.application.client.port.ClientPort;
+import com.adictos.tutorial.domain.client.port.ClientOutboundPort;
 import com.adictos.tutorial.domain.client.model.Client;
 import com.adictos.tutorial.infrastructure.client.persistence.ClientJpaRepository;
 import com.adictos.tutorial.infrastructure.client.persistence.mapper.ClientMapper;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ClientJpaAdapter implements ClientPort {
+public class ClientJpaAdapter implements ClientOutboundPort {
 
     public ClientJpaAdapter(ClientJpaRepository repository) {
         this.repository = repository;
