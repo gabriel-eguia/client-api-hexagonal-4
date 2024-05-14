@@ -1,4 +1,4 @@
-package com.adictos.tutorial.infrastructure;
+package com.adictos.tutorial;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
