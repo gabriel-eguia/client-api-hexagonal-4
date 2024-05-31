@@ -9,6 +9,7 @@
         <module>client-api-app</module>
         <module>client-api-inbound</module>
         <module>client-api-outbound</module>
+        <module>client-api-architecture</module>
     </modules>
 
     <parent>

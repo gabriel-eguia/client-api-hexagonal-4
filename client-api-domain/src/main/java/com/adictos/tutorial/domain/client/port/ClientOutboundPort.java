@@ -5,6 +5,11 @@ import com.adictos.tutorial.domain.client.model.Client;
 import java.util.List;
 
 public interface ClientOutboundPort {
-    Client create(Client client);
-    List<Client> findAll();
+	Client create(Client client);
+
+	List<Client> findAll();
+
+	Client findById(Long clientId);
+
+	Client update(Client client);
 }

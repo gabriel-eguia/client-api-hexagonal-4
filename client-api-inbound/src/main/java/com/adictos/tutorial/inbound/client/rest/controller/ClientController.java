@@ -1,6 +1,7 @@
 package com.adictos.tutorial.inbound.client.rest.controller;
 
 import com.adictos.tutorial.domain.client.port.ClientInboundPort;
+import com.adictos.tutorial.inbound.client.rest.dto.ChangeNameReq;
 import com.adictos.tutorial.inbound.client.rest.dto.ClientCreateReq;
 import com.adictos.tutorial.inbound.client.rest.dto.ClientRes;
 import org.springframework.http.HttpStatus;
@@ -29,4 +30,11 @@ public class ClientController {
 		return ClientRes.toResponse(port.findAll());
 	}
 
+	@PutMapping("/{clientId}/name")
+	public ClientRes changeClientNameById(
+			@PathVariable Long clientId,
+			@RequestBody ChangeNameReq changeNameReq
+	) {
+		return ClientRes.toResponse(port.updateClientNameById(clientId, changeNameReq.newName()));
+	}
 }
