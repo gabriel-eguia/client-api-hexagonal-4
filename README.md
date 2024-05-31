@@ -1,4 +1,5 @@
-# client-api-hexagonal-2
-Proyecto de Arquitectura Hexagonal (puertos y adaptadores) separando capas por modulos Java y utilizando Spring Boot como framework  
+# client-api-hexagonal-3
 
-Tutorial con todas las explicaciones: https://www.adictosaltrabajo.com/2024/03/06/arquitectura-hexagonal-con-java-y-spring/  
+Proyecto de Arquitectura Hexagonal (puertos y adaptadores) + CQRS separando capas por modulos Java y utilizando Spring
+Boot como framework  
+ 
