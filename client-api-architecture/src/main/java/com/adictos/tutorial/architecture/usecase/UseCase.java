@@ -7,4 +7,8 @@ public abstract class UseCase<T> {
 	protected T execute() {
 		return run();
 	}
+
+	protected <R> R runInternal(UseCase<R> otherUsecase) {
+		return otherUsecase.run();
+	}
 }
