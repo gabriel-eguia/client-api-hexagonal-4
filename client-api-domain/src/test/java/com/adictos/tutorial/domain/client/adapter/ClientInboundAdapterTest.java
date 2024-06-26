@@ -2,10 +2,7 @@ package com.adictos.tutorial.domain.client.adapter;
 
 import com.adictos.tutorial.architecture.usecase.UseCaseBus;
 import com.adictos.tutorial.domain.client.model.Client;
-import com.adictos.tutorial.domain.client.usecase.CreateClientCmd;
-import com.adictos.tutorial.domain.client.usecase.GetClientByIdQry;
-import com.adictos.tutorial.domain.client.usecase.GetClientsQry;
-import com.adictos.tutorial.domain.client.usecase.UpdateClientCmd;
+import com.adictos.tutorial.domain.client.usecase.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -59,34 +56,18 @@ class ClientInboundAdapterTest {
 	}
 
 	@Test
-	void updateClientNameById_whenInvoked_shouldCallGetClientByIdQry() {
+	void updateClientNameById_whenInvoked_shouldCallUpdateClientNameByIdCmd() {
 		var clientId = 1L;
 		var newName = "newName";
-		var existingClient = new Client(
+		var updatedClient = new Client(
 				clientId,
-				"name",
+				newName,
 				"lastName"
 		);
-		doReturn(existingClient).when(bus).invoke(any(GetClientByIdQry.class));
+		doReturn(updatedClient).when(bus).invoke(any(UpdateClientNameByIdCmd.class));
 
 		sut.updateClientNameById(clientId, newName);
 
-		verify(bus).invoke(any(GetClientByIdQry.class));
-	}
-
-	@Test
-	void updateClientNameById_whenInvoked_shouldCallUpdateClientCmd() {
-		var clientId = 1L;
-		var newName = "newName";
-		var existingClient = new Client(
-				clientId,
-				"name",
-				"lastName"
-		);
-		doReturn(existingClient).when(bus).invoke(any(GetClientByIdQry.class));
-
-		sut.updateClientNameById(clientId, newName);
-
-		verify(bus).invoke(any(UpdateClientCmd.class));
+		verify(bus).invoke(any(UpdateClientNameByIdCmd.class));
 	}
 }
