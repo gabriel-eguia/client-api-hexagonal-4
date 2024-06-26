@@ -1,9 +1,11 @@
 package com.adictos.tutorial.architecture.context;
 
 import com.adictos.tutorial.architecture.context.holder.ContextHolder;
+import jakarta.inject.Singleton;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+@Singleton
 public final class ServiceLocator {
 
 	private static final String TEST_CONTEXT_HOLDER = "com.adictos.tutorial.architecture.context.holder.TestContextHolder";
